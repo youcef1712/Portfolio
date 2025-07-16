@@ -1,0 +1,12 @@
+<section class="projects" id="projects">
+    <h2>Mes projets</h2>
+    @for (item of projects; track $index) {
+    <div class="project-card">
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.description }}</p>
+      <p><strong>Technos :</strong> {{ item.technologies.join(', ') }}</p>
+      @if (item.link) {}
+      <a [href]="item.link" target="_blank">Voir le projet</a>
+    </div>
+}
+  </section>

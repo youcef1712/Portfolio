@@ -1,0 +1,11 @@
+<section class="skills" id="skills">
+    <h2>Mes compétences</h2>
+    <ul>
+        @for (item of skills; track $index) {
+      <li>
+        <span class="skill-name">{{ item.name }}</span>
+        <span class="skill-level">{{ item.level }}</span>
+      </li>
+    }
+    </ul>
+  </section>
