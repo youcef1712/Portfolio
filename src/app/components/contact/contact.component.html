@@ -1,10 +1,44 @@
 <section class="contact" id="contact">
-    <h2>Me contacter</h2>
-    <p>📍 Lyon, France</p>
-    <p>📞 06 52 23 52 00</p>
-    <p>📧 <a href="mailto:walasb2001&#64;gmail.com">walasb2001&#64;gmail.com</a></p>
-    <p>🔗
-      <a href="https://github.com/youcef1712" target="_blank">GitHub</a> |
-      <a href="https://www.linkedin.com/in/youcef-bendra-006aa5314/" target="_blank">LinkedIn</a>
-    </p>
-  </section>
+  <h2>Me contacter</h2>
+
+  @if(!submitted) {
+    <form (ngSubmit)="onSubmit()" [formGroup]="contactForm">
+      <label>
+        Nom
+        <input type="text" formControlName="name">
+        @if(contactForm.get('name')?.invalid && contactForm.get('name')?.touched) {
+          <span class="error">Nom requis (min 2 caractères)</span>
+        }
+      </label>
+
+      <label>
+        Sujet
+        <input type="text" formControlName="title">
+        @if(contactForm.get('name')?.invalid && contactForm.get('name')?.touched) {
+          <span class="error">Nom requis (min 2 caractères)</span>
+        }
+      </label>
+      <label>
+        Email
+        <input type="email" formControlName="email">
+        @if(contactForm.get('email')?.invalid && contactForm.get('email')?.touched) {
+          <span class="error">Email invalide</span>
+        }
+      </label>
+
+      <label>
+        Message
+        <textarea formControlName="message"></textarea>
+        @if(contactForm.get('message')?.invalid && contactForm.get('message')?.touched) {
+          <span class="error">Message requis (min 10 caractères)</span>
+        }
+      </label>
+
+      <button type="submit" [disabled]="contactForm.invalid">Envoyer</button>
+    </form>
+  }
+
+  @if(submitted) {
+    <p class="success">Merci ! Votre message a été envoyé.</p>
+  }
+</section>

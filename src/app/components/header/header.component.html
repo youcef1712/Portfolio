@@ -1,11 +1,19 @@
-<header class="main-header">
-    <div class="logo">Youcef.dev</div>
-    <nav>
-      <ul>
-        <li><a href="#apropos">À propos</a></li>
-        <li><a href="#projects">Projets</a></li>
-        <li><a href="#skills">Compétences</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<mat-toolbar color="primary" class="app-toolbar" [class.scrolled]="isScrolled">
+  <button mat-icon-button class="mobile-toggle" (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <span class="logo">Youcef.dev</span>
+
+  <span class="spacer"></span>
+
+  <!-- Menu desktop -->
+  <nav class="desktop-nav">
+    <div class="desktop-buttons">
+      <button mat-button [class.active]="activeSection === 'apropos'" (click)="scrollTo('apropos')">À propos</button>
+      <button mat-button [class.active]="activeSection === 'projects'" (click)="scrollTo('projects')">Projets</button>
+      <button mat-button [class.active]="activeSection === 'skills'" (click)="scrollTo('skills')">Compétences</button>
+      <button mat-button [class.active]="activeSection === 'contact'" (click)="scrollTo('contact')">Contact</button>
+    </div>
+  </nav>
+</mat-toolbar>

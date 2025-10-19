@@ -9,9 +9,18 @@ import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
   selector: 'app-root',
-  imports: [AboutComponent,HeaderComponent,ProjectsComponent,SkillsComponent,ContactComponent,FooterComponent],
+  standalone: true,
+  imports: [
+    RouterOutlet,
+    AboutComponent,
+    HeaderComponent,
+    ProjectsComponent,
+    SkillsComponent,
+    ContactComponent,
+    FooterComponent
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   title = 'angularSite';

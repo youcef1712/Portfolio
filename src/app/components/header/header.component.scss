@@ -1,66 +1,93 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+/* =========================
+   Header toolbar
+   ========================= */
+   mat-toolbar.app-toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 64px; /* hauteur standard Material */
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    z-index: 2000;
+    background-color: #1976d2; /* couleur par défaut */
+    color: white;
+    transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
+  }
 
-.main-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: #343a40;
-  color: white;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-}
+  /* Toolbar après scroll */
+  mat-toolbar.app-toolbar.scrolled {
+    background-color: #ffffff; /* couleur au scroll */
+    color: #000000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
 
-.main-header .logo {
-  font-size: 18px;
-  font-weight: bold;
-  color: #f8d7da;
-  white-space: nowrap;
-  flex-shrink: 0;
-  max-width: 200px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
+  /* Espace flexible entre logo et nav */
+  .spacer {
+    flex: 1 1 auto;
+  }
 
-.main-header nav {
-  flex: 1;
-  min-width: 0;
-}
+  /* =========================
+     Menu desktop
+     ========================= */
+  .desktop-nav {
+    display: flex;
+    gap: 10px;
+  }
 
-.main-header nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+  /* =========================
+     Bouton menu mobile
+     ========================= */
+  .mobile-toggle {
+    display: none;
+  }
 
-.main-header nav ul li {
-  margin-left: 12px; /* réduit un peu la marge */
-}
+  /* =========================
+     Sidenav mobile
+     ========================= */
+  .mobile-sidenav {
+    width: 220px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: #ffffff;
+  }
 
-.main-header nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
-  transition: color 0.3s;
-}
+  /* Boutons du menu mobile */
+  .mobile-sidenav button {
+    justify-content: flex-start;
+    text-align: left;
+    width: 100%;
+    transition: background-color 0.2s;
+  }
 
-.main-header nav ul li a:hover {
-  color: #ffc107;
-}
+  .mobile-sidenav button:hover {
+    background-color: rgba(25, 118, 210, 0.1);
+  }
 
-main {
-  padding-top: 60px; /* adapte selon la hauteur du header */
-  padding-left: 16px;
-  padding-right: 16px;
-}
+  /* =========================
+     Responsive : mobile
+     ========================= */
+  @media (max-width: 768px) {
+    .desktop-nav {
+      display: none; /* masque le menu desktop */
+    }
+
+    .mobile-toggle {
+      display: inline-flex; /* affiche le bouton menu mobile */
+    }
+  }
+  button.active {
+    color: #ff4081; /* couleur pour le bouton actif */
+  }
+
+
+  /* =========================
+     Contenu principal
+     ========================= */
+  main {
+    margin-top: 64px; /* espace pour toolbar fixe */
+    padding: 1rem;
+  }
