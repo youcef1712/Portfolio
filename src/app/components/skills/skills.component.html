@@ -1,11 +1,19 @@
 <section class="skills" id="skills">
-    <h2>Mes compétences</h2>
-    <ul>
-        @for (item of skills; track $index) {
+  <h2>Mes compétences</h2>
+  <ul>
+    @for (item of skills; track $index){
       <li>
-        <span class="skill-name">{{ item.name }}</span>
-        <span class="skill-level">{{ item.level }}</span>
+        <div class="skill-info">
+          <span class="skill-name">{{ item.name }}</span>
+          <span class="skill-level">{{ item.level }}</span>
+        </div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width: {{ item.percentage }}%;"></div>
+        </div>
       </li>
     }
-    </ul>
-  </section>
+    @if (skills.length === 0) {
+      <p>Aucune compétence pour le moment.</p>
+    }
+  </ul>
+</section>

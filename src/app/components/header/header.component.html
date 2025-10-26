@@ -1,9 +1,15 @@
 <mat-toolbar color="primary" class="app-toolbar" [class.scrolled]="isScrolled">
+  <!-- Bouton menu mobile -->
   <button mat-icon-button class="mobile-toggle" (click)="sidenav.toggle()">
     <mat-icon>menu</mat-icon>
   </button>
 
-  <span class="logo">Youcef.dev</span>
+  <!-- Logo -->
+  <div class="logo-container">
+    <a href="#top">
+      <img src="img/logo.png" alt="Logo Youcef" class="logo" />
+    </a>
+  </div>
 
   <span class="spacer"></span>
 
@@ -13,7 +19,13 @@
       <button mat-button [class.active]="activeSection === 'apropos'" (click)="scrollTo('apropos')">À propos</button>
       <button mat-button [class.active]="activeSection === 'projects'" (click)="scrollTo('projects')">Projets</button>
       <button mat-button [class.active]="activeSection === 'skills'" (click)="scrollTo('skills')">Compétences</button>
+      <button mat-button [class.active]="activeSection === 'CV'" (click)="scrollTo('CV')">CV</button>
+
       <button mat-button [class.active]="activeSection === 'contact'" (click)="scrollTo('contact')">Contact</button>
+
+      <button mat-button [class.active]="activeSection === 'Retrouvez-moi'" (click)="scrollTo('Retrouvez-moi')">Retrouvez-moi</button>
+
+
     </div>
   </nav>
 </mat-toolbar>

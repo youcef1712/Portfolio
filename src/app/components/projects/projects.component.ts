@@ -12,7 +12,7 @@ export class ProjectsComponent {
       title: 'Application de planification de tournées',
       description: 'Application web pour visualiser sur carte et planifier automatiquement des tournées optimisées (distance, durée, coût), avec sélection des commandes, camions et équipes. Projet réalisé avec méthode agile (sprints, retours client).',
       technologies: ['Angular', 'Spring Boot', 'PostgreSQL', 'Agile'],
-      link: ''
+      link: 'https://github.com/youcef1712/Projet-Integrateur'
     },
     {
       title: 'Développement d’un jeu vidéo',

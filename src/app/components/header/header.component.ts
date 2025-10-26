@@ -28,7 +28,7 @@ export class HeaderComponent {
   onWindowScroll() {
     this.isScrolled = window.scrollY > 0;
 
-    const sections = ['apropos', 'projects', 'skills', 'contact'];
+    const sections = ['apropos', 'projects','CV','contact-rapide', 'skills', 'contact'];
     sections.forEach((id, index) => {
       const el = document.getElementById(id);
       if (el) {

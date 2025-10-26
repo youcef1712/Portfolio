@@ -8,17 +8,17 @@ import { Component } from '@angular/core';
 })
 export class SkillsComponent {
   skills = [
-    { name: 'Angular', level: 'Avancé' },
-    { name: 'Spring Boot', level: 'Intermédiaire' },
-    { name: 'Java', level: 'Confirmé' },
-    { name: 'JavaScript', level: 'Confirmé' },
-    { name: 'C# / .NET / MonoGame', level: 'Intermédiaire' },
-    { name: 'Python', level: 'Intermédiaire' },
-    { name: 'PHP / MySQL', level: 'Intermédiaire' },
-    { name: 'HTML / CSS / Bootstrap', level: 'Confirmé' },
-    { name: 'XML, XSD, XSLT', level: 'Intermédiaire' },
-    { name: 'Git / GitHub', level: 'Confirmé' },
-    { name: 'Slack, Jira', level: 'Bonne pratique' },
-    { name: 'Méthodologie Agile', level: 'Utilisée en projet' }
+    { name: 'Angular', level: 'Avancé', percentage: 90 },
+    { name: 'Spring Boot', level: 'Intermédiaire', percentage: 70 },
+    { name: 'Java', level: 'Confirmé', percentage: 85 },
+    { name: 'JavaScript', level: 'Confirmé', percentage: 85 },
+    { name: 'C# / .NET / MonoGame', level: 'Intermédiaire', percentage: 70 },
+    { name: 'Python', level: 'Intermédiaire', percentage: 70 },
+    { name: 'PHP / MySQL', level: 'Intermédiaire', percentage: 70 },
+    { name: 'HTML / CSS / Bootstrap', level: 'Confirmé', percentage: 85 },
+    { name: 'XML, XSD, XSLT', level: 'Intermédiaire', percentage: 70 },
+    { name: 'Git / GitHub', level: 'Confirmé', percentage: 85 },
+    { name: 'Slack, Jira', level: 'Bonne pratique', percentage: 60 },
+    { name: 'Méthodologie Agile', level: 'Utilisée en projet', percentage: 75 }
   ];
 }

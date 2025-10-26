@@ -1,0 +1,115 @@
+h2 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 2.3em;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  background: linear-gradient(90deg, #C426D7 0%, #B034DC 60%, #9b2bd2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 0 rgba(0,0,0,0.03); /* ombre très subtile */
+  margin-top: 36px;
+  letter-spacing: 0.5px;
+}
+
+
+
+.cv-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background:#f7f7f7;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+/* MINIATURE contrôlée pour éviter qu'elle soit trop grande au départ */
+.cv-thumbnail {
+  max-width: 600px;        /* << ajuste ici si tu veux plus petit */
+  width: 100%;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.18s ease;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+}
+.cv-thumbnail:hover { transform: scale(1.03); }
+
+/* OVERLAY du popup : fond clair (presque blanc) */
+.cv-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+}
+
+/* conteneur déplaçable (stop propagation sur click intérieur) */
+.cv-popup {
+  position: relative;
+  cursor: grab;
+  max-width: 95vw;
+  max-height: 95vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* IMAGE DANS LA POPUP: sera transformée (translate + scale) */
+.cv-popup-image {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 8px;
+  box-shadow: 0 18px 60px rgba(0,0,0,0.18);
+  user-select: none;
+  transition: transform 0.18s ease;
+  will-change: transform;
+}
+
+/* BOUTON fermer en haut droite du popup */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0,0,0,0.06);
+  border: none;
+  border-radius: 6px;
+  padding: 6px 9px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.close-btn:hover { background: rgba(0,0,0,0.12); }
+
+/* bouton download standard */
+.download-btn {
+  text-align: center;
+  margin-top: 1.5rem;
+
+  a {
+    background: linear-gradient(90deg, #b5179e, #7209b7);
+    color: #fff;
+    padding: 0.8rem 1.4rem;
+    border-radius: 10px;
+    text-decoration: none;
+  }
+}
+.download-popup-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(90deg, #b5179e, #7209b7);
+  color: #fff;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(114, 9, 183, 0.4);
+  z-index: 3001;
+}
+
+.download-popup-btn:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 18px rgba(181, 23, 158, 0.6);
+}
+

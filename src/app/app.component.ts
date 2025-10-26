@@ -6,6 +6,8 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ContactRapideComponent } from "./components/contact-rapide/contact-rapide.component";
+import { CvComponent } from './components/cv/cv.component';
 
 @Component({
   selector: 'app-root',
@@ -17,8 +19,11 @@ import { FooterComponent } from './components/footer/footer.component';
     ProjectsComponent,
     SkillsComponent,
     ContactComponent,
-    FooterComponent
-  ],
+    FooterComponent,
+    ContactRapideComponent,
+    ContactRapideComponent,
+    CvComponent
+],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

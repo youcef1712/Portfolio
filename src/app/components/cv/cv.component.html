@@ -1,0 +1,45 @@
+<h2>MON CV</h2>
+
+<section class="cv-wrapper" id="CV">
+  <div class="cv-container">
+    <img
+      src="./files/CV.webp"
+      alt="CV de Youcef Bendra"
+      class="cv-thumbnail"
+      (click)="openPopup()"
+      draggable="false"
+    />
+  </div>
+
+  @if (isPopupOpen) {
+    <div class="cv-popup-overlay" (click)="closePopup()">
+      <div
+        class="cv-popup"
+        (click)="$event.stopPropagation()"
+        (mousedown)="startDrag($event)"
+        (mousemove)="onDrag($event)"
+        (mouseup)="stopDrag()"
+        (mouseleave)="stopDrag()"
+      >
+        <img
+          src="./files/CV.webp"
+          alt="CV Zoomé"
+          class="cv-popup-image"
+          [style.transform]="popupTransform"
+          (click)="toggleImageZoom($event)"
+          draggable="false"
+        />
+
+        <button class="close-btn" (click)="closePopup($event)">✕</button>
+
+        <!-- 🔽 Téléchargement propre en version image -->
+        <button
+          class="download-popup-btn"
+          (click)="downloadImage($event)">
+          📸 Télécharger le CV (Image)
+        </button>
+
+      </div>
+    </div>
+  }
+</section>

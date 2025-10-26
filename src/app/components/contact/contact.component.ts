@@ -25,10 +25,10 @@ import { title } from 'process';
     onSubmit() {
       if (this.contactForm.valid) {
         emailjs.send(
-          '17122001',       // ton ID de service EmailJS
-          'template_m9raa0h', // ton ID de template
+          '17122001',       //  ID de service EmailJS
+          'template_m9raa0h', //  ID de template
           this.contactForm.value,
-          'vPfRV9TlXNpYXIwxH'        // ta clé publique
+          'vPfRV9TlXNpYXIwxH'        // clé publique
         )
         .then(() => {
           this.submitted = true;
@@ -37,10 +37,10 @@ import { title } from 'process';
           console.error('Erreur en envoyant le message:', err);
         });
         emailjs.send(
-          '17122001',       // ton ID de service EmailJS
-          'template_ofcd0tq', // ton ID de template
+          '17122001',       //  ID de service EmailJS
+          'template_ofcd0tq', //  ID de template
           this.contactForm.value,
-          'vPfRV9TlXNpYXIwxH'        // ta clé publique
+          'vPfRV9TlXNpYXIwxH'        //  clé publique
         )
         .then(() => {
           this.submitted = true;
